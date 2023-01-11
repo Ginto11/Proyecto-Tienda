@@ -1,0 +1,144 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.contenedor-header{
+    position: sticky;
+    top: 0;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #0006;
+    z-index: 900;
+    transition: 1s ease all;
+    display: none;
+}
+
+.overlay-active{
+    display: block;
+}
+
+.contenedor-header .contenedor-titulo{
+    background-color: #8a2be2;
+    text-align: center;
+    text-shadow: 0 0 3px #222;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-header .contenedor-titulo .titulo{
+    width: 300px;
+    font-size: 18px;
+}
+
+header{
+    height: 80px;
+    display: flex;
+    background-color: #eee;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 0 3px #222;
+}
+
+header button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.navegacion{
+    position: fixed;
+    z-index: 998;
+    width: 25%;
+    height: 100vh;
+    background-color: #fff; /*8a2be290*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    font-size: 25px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 0 3px #222;
+
+    transition: .5s ease all;
+    transform: translateX(-1000px);
+}
+
+.navegacion-active{
+    transform: translateX(0);
+    z-index: 901;
+}
+
+.navegacion .navegacion-secciones{
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navegacion .contenedor-menu-despegable{
+    width: 100%;   
+}
+
+.navegacion .navegacion-secciones a{
+    color: #000;
+    text-decoration: none;
+    width: auto;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+}
+
+.navegacion .link-menu{
+    width: 100%;
+}
+
+.navegacion a:hover{
+    color: #000;
+    background-color: #0003;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    font-weight: bold;
+    border-right: 3px solid #000;
+}
+
+.navegacion ul{
+    background-color: #222;
+    list-style: none;
+}
+
+.lista-inactive{
+    display: none;
+}
+
+section{
+    padding-top: 6rem;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+    text-align: center;
+}
