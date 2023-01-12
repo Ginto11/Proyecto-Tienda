@@ -1,6 +1,7 @@
 const btn = document.querySelector(".btn-menu");
 const navegacion = document.querySelector(".navegacion");
 const overlay = document.querySelector(".overlay");
+const luna = "🌙";
 
 btn.addEventListener("click", ()=>{
     navegacion.classList.toggle("navegacion-active");
@@ -8,11 +9,21 @@ btn.addEventListener("click", ()=>{
 })
 
 
+
 document.addEventListener("click", (e) => {
 
     if(e.target.localName == "a"){
         navegacion.classList.toggle("navegacion-active");
         overlay.classList.toggle("overlay-active");
+    }
+
+    if(e.target.matches(".btn-theme-dark")){
+        const selectores = document.querySelectorAll("[data-theme]");
+        
+        selectores.forEach(element => {
+
+            element.classList.add("modo-dark")
+        });
     }
 
 })

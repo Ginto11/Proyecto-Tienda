@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap');
+
+:root{
+    --theme-modo-dark-header-color: #000;  
+    --theme-modo-dark-body-color: #fff;
+    --theme-modo-dark-body-background: #222;
+}
+
 * {
     font-family: 'Sofia Sans', Calibri;
     padding: 0;
@@ -12,6 +19,18 @@ html{
 
 body{
     overflow-x: hidden;
+}
+
+body::-webkit-scrollbar{
+    width: 6px;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+body::-webkit-scrollbar-thumb{
+    width: 5px;
+    border-radius: 3px;
+    background-color: #0006;
 }
 
 .contenedor-header{
@@ -201,4 +220,36 @@ ul{
     .navegacion{
         width: 100%;
     }
+
+    section .contenedor-contenido{
+        width: 85%;
+    }
+}
+
+
+/* MODO DARK */
+.modo-dark{
+    background-color: var(--theme-modo-dark-body-background);
+    color: #fff;
+}
+
+.modo-dark h1, .modo-dark h2{
+
+    color: #8E44AD;
+    text-shadow: 0 0 3px #000;
+}
+
+.modo-dark .navegacion{
+    background-color: var(--theme-modo-dark-body-background);
+    color: var(--theme-modo-dark-body-color) !important;
+}
+
+.modo-dark .navegacion a{
+    color: var(--theme-modo-dark-body-color) !important;
+} 
+
+.modo-dark .navegacion a:hover{
+    color: #8E44AD !important;
+    border-right: 3px solid #8E44AD;
+    background-color: #F2F3F420;
 }
