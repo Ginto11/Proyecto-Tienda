@@ -11,9 +11,10 @@
 
     <div class="contenedor-header">
         <header>
-            <h1>Tienda</h1>
+            <h1>Centro Contraentrega</h1>
             <div>
-                <button class="btn-menu"> <img src="img/menu.png" alt="Menu"></button>
+                <button class="btn-menu"> <img src="icons/menu.png" alt="Menu"></button>
+                <button class="btn-theme-dark"> 🌙 </button>
             </div>
         </header>
     </div>
@@ -25,33 +26,68 @@
     <nav class="navegacion">
         <h2>Navegacion</h2>
         <div class="navegacion-secciones">
-            <a href="#inicio"><img src="img/inicio.png" alt="">Inicio</a>
-            <a href="#nosotros"> <img src="img/nosotros.png" alt="">Nosotros</a>
-            <a href="#metodos-pagos"><img src="img/pago.png" alt="">Metodos de pagos</a>
-            <a class="link-menu" href="#productos"><img src="img/productos.png" alt="">Productos</a>
-            <a href="#contacto"><img src="img/contacto.png" alt="">Contacto</a>
-            <a href="#acerca"><img src="img/acerca.png" alt="">Acerca de</a>
+            <a href="#inicio"><img src="icons/inicio.png" alt="">Inicio</a>
+            <a href="#metodos-pagos"><img src="icons/pago.png" alt="">Metodos de pagos</a>
+            <a class="link-menu" href="#productos"><img src="icons/productos.png" alt="">Productos</a>
+            <a href="#contacto"><img src="icons/contacto.png" alt="">Contacto</a>
+            <a href="#acerca"><img src="icons/acerca.png" alt="">Acerca de</a>
         </div>
     </nav>
 
     <section id="inicio">
-        <p>Inicio</p>
-    </section>
-
-    <section id="nosotros">
-        <p>Nosotros</p>
+        <div class="contenedor-contenido">
+            <div class="contenedor-imagen">
+                <img src="img/imagen-inicio.jpg" alt="">
+            </div>
+            <p>
+                <strong>Centro Contraentrega</strong>, es un sitio web de compra de productos al mejor precio, por la 
+                mejor calidad posible, el usuario lo que hara sera agregar los productos al carrito y al comprar se le 
+                reenvia al chat de la persona que realiza el envio haciendo posible una buena compra.  
+                Ademas de eso ofrece un servicio Contraentrega lo que hace que el proceso de compra sea mas seguro
+                y uno de los metodos de pago mas gustados por los usuarios que compran por internet.
+            </p>
+        </div>
     </section>
 
     <section id="metodos-pagos">
-        <p>Metodos de pago.</p>
-    </section>
-    
-    <section id="metodos-pagos">
-        <p>Metodos de pago.</p>
+        <div class="contenedor-contenido">
+            <h2>Metodos de pagos.</h2>
+            <p>
+                En <strong>Centro Contraentrega</strong> tenemos un metodo de pago principal y es el <strong>Contraentrega</strong>, 
+                esto debido a que es un metodo mas fiable y es uno de los mas predilectos ya que da certeza de seguridad de la compra
+                y pagaran hasta tener el producto en sus manos. No como otros otros tipos de pagos que pueden llegar a ser mas inseguros
+                por lo que este resulta siendo una mejor opcion para muchos de los usuarios que compran por internet.
+            </p>
+            <p>
+                Con este metodo de pago, solo le solicitaremos la direccion de destino a la que le llevaremos el producto o envio, su nombre
+                para identificarlo y solo pagara hasta recibirlo y verificarlo. Si el producto se encuentra en mal estado 
+            </p>
+            <div class="contenedor-imagen">
+                <img src="img/imagen-pagos.jpg" alt="">
+            </div>
+            <ul>
+            </ul>
+        </div>
     </section>
 
     <section id="productos">
-        <p>Productos</p>
+        <div class="contenedor-contenido">
+            <h2>Productos y Categorias</h2>
+            <div class="contenedor-filtro">
+                <label for="categorias"> Categorias
+                    <select name="categorias" id="filtro-categorias">
+                        <option value="" selected>Seleccionar</option>
+                        <option value="hombres">Hombres</option>
+                        <option value="mujeres">Mujeres</option>
+                        <option value="niños">Niños</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="contenedor-productos-filtro">
+
+            </div>
+        </div>
     </section>
 
     <section id="contacto">

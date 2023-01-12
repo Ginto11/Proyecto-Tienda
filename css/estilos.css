@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap');
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Sofia Sans', Calibri;
     padding: 0;
     margin: 0;
     user-select: none;
@@ -50,7 +51,7 @@ body{
 header{
     height: 80px;
     display: flex;
-    background-color: #eee;
+    background-color: #85C1E9;
     justify-content: space-around;
     align-items: center;
     box-shadow: 0 0 3px #222;
@@ -60,12 +61,40 @@ header button{
     background-color: transparent;
     border: none;
     cursor: pointer;
+    z-index: 600;
 }
+
+header div {
+    display: flex;
+    gap: 30px;
+}
+
+header div .btn-theme-dark{
+    background-color: #0004;
+    width: 32px;
+    height: 32px;
+    font-size:20px;
+    border-radius: 50%;
+}
+
+header div .btn-theme-light{
+    background-color: #0004;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow;
+    font-size: 40px;
+}
+
+
 
 .navegacion{
     position: fixed;
     z-index: 998;
-    width: 25%;
+    width: 28%;
     height: 100vh;
     background-color: #fff; /*8a2be290*/
     top: 0;
@@ -138,7 +167,38 @@ header button{
 section{
     padding-top: 6rem;
     width: 100%;
-    max-width: 1200px;
     min-height: 100vh;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    line-height: 1.5;
+}
+
+section .contenedor-contenido{
+    padding: 0 20px;
+    border-left: 2px solid #0002;
+    border-right: 2px solid #0002;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 18px;
+}
+
+section .contenedor-contenido .contenedor-imagen{
+    width: 100%;
+}
+
+section .contenedor-contenido .contenedor-imagen img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+ul{
+    margin-left: 30px;
+}
+
+@media screen and (max-width: 970px) {
+    .navegacion{
+        width: 100%;
+    }
 }
