@@ -1,6 +1,7 @@
 const btn = document.querySelector(".btn-menu");
 const navegacion = document.querySelector(".navegacion");
 const overlay = document.querySelector(".overlay");
+const selectores = document.querySelectorAll("[data-theme]");
 const luna = "🌙";
 
 btn.addEventListener("click", ()=>{
@@ -8,6 +9,18 @@ btn.addEventListener("click", ()=>{
     overlay.classList.toggle("overlay-active");
 })
 
+
+document.addEventListener("DOMContentLoaded", () =>{
+    if(localStorage.getItem("theme") === null) {localStorage.setItem("theme", "light");}
+
+    if(localStorage.getItem("theme") === "light"){
+        modoLight();
+    }
+
+    if(localStorage.getItem("theme") === "dark"){
+        modoDark();
+    }
+})
 
 
 document.addEventListener("click", (e) => {
@@ -19,27 +32,36 @@ document.addEventListener("click", (e) => {
 
     if(e.target.matches(".btn-theme-dark")){
 
-        const selectores = document.querySelectorAll("[data-theme]");
-
         const sol = "🌞";
         const luna = "🌙";
 
         if(e.target.textContent === luna){
+            modoDark();
+            localStorage.setItem("theme", "dark");
             e.target.textContent = sol;
         }
         else{
+            modoLight();
             e.target.textContent = luna;
+            localStorage.setItem("theme", "light");
         }
-        
-        selectores.forEach(element => {
-            element.classList.toggle("modo-dark");
-        });
-
-        
+    
 
     }
 
 })
+
+const modoDark = () => {
+    selectores.forEach(element => {
+        element.classList.add("modo-dark");
+    });
+}
+
+const modoLight = () =>{
+    selectores.forEach(element => {
+        element.classList.remove("modo-dark");
+    });
+}
 
 
 const categorias = {
