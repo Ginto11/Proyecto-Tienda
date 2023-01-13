@@ -18,12 +18,25 @@ document.addEventListener("click", (e) => {
     }
 
     if(e.target.matches(".btn-theme-dark")){
+
         const selectores = document.querySelectorAll("[data-theme]");
+
+        const sol = "🌞";
+        const luna = "🌙";
+
+        if(e.target.textContent === luna){
+            e.target.textContent = sol;
+        }
+        else{
+            e.target.textContent = luna;
+        }
         
         selectores.forEach(element => {
-
-            element.classList.add("modo-dark")
+            element.classList.toggle("modo-dark");
         });
+
+        
+
     }
 
 })
@@ -57,9 +70,6 @@ document.getElementById("filtro-categorias").addEventListener("change", (e)=>{
         mostrarDatos(niños);
     }
 })
-
-console.log(categorias)
-
 
 function mostrarDatos(data){
     let lista = "";

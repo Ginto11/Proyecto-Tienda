@@ -19,6 +19,7 @@ html{
 
 body{
     overflow-x: hidden;
+    position: relative;
 }
 
 body::-webkit-scrollbar{
@@ -31,6 +32,32 @@ body::-webkit-scrollbar-thumb{
     width: 5px;
     border-radius: 3px;
     background-color: #0006;
+}
+
+.contenedor-logos{
+    background-color: #0001;
+    padding: 3px;
+    width: 50px;
+    height: 230px;
+    position: fixed;
+    top: 40%;
+    bottom: 40%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    border-radius: 5px;
+}
+
+.contenedor-logos div{
+    width: 90%;
+    height: 40px;
+}
+
+.contenedor-logos div img{
+    width: 100%;
 }
 
 .contenedor-header{
@@ -70,7 +97,7 @@ body::-webkit-scrollbar-thumb{
 header{
     height: 80px;
     display: flex;
-    background-color: #85C1E9;
+    background-color: #1F618D;
     justify-content: space-around;
     align-items: center;
     box-shadow: 0 0 3px #222;
@@ -189,7 +216,7 @@ section{
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    line-height: 1.5;
+    line-height: 2;
 }
 
 section .contenedor-contenido{
@@ -216,27 +243,25 @@ ul{
     margin-left: 30px;
 }
 
-@media screen and (max-width: 970px) {
-    .navegacion{
-        width: 100%;
-    }
-
-    section .contenedor-contenido{
-        width: 85%;
-    }
-}
-
-
 /* MODO DARK */
 .modo-dark{
     background-color: var(--theme-modo-dark-body-background);
     color: #fff;
 }
 
-.modo-dark h1, .modo-dark h2{
 
+.modo-dark h2, .modo-dark strong{
     color: #8E44AD;
     text-shadow: 0 0 3px #000;
+}
+
+.modo-dark header, .modo-dark h1{
+    background-color: #8E44AD;
+    color: #000;
+}
+
+.modo-dark .contenedor-logos{
+    background-color: #fff1;
 }
 
 .modo-dark .navegacion{
@@ -252,4 +277,78 @@ ul{
     color: #8E44AD !important;
     border-right: 3px solid #8E44AD;
     background-color: #F2F3F420;
+}
+
+
+@media screen and (max-width: 325px) {
+
+    header h1{
+        font-size: 20px;
+    }
+
+    section .contenedor-contenido{
+        width: 95%;
+    }
+
+    .contenedor-logos{
+        display: none;
+    }
+
+    .navegacion-active{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 376px) {
+
+    header h1{
+        font-size: 20px;
+    }
+
+    section .contenedor-contenido{
+        width: 95%;
+    }
+
+    .contenedor-logos{
+        display: none;
+    }
+
+    .navegacion-active{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+
+    header h1{
+        font-size: 25px;
+    }
+
+    section .contenedor-contenido{
+        width: 85%;
+    }
+
+    .contenedor-logos{
+        display: none;
+    }
+
+    .navegacion-active{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 769px) {
+
+    header h1{
+        font-size: 25px;
+    }
+
+    section .contenedor-contenido{
+        width: 70%;
+    }
+
+
+    .navegacion-active{
+        width: 100%;
+    }
 }
