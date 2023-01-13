@@ -280,14 +280,18 @@ ul{
 }
 
 
-@media screen and (max-width: 325px) {
+@media screen and (max-width: 321px) {
+
+    header div{
+        gap: 10px;
+    }
 
     header h1{
-        font-size: 20px;
+        font-size: 17px !important;
     }
 
     section .contenedor-contenido{
-        width: 95%;
+        width: 100% !important;
     }
 
     .contenedor-logos{
