@@ -51,6 +51,36 @@ body::-webkit-scrollbar-thumb{
     border-radius: 5px;
 }
 
+.btn-scroll-top{
+    background-color: #1F618D;
+    color: #000;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 50%;
+    border-color: #000;
+    font-weight: bold;
+
+    transition: 0.3s ease all;
+    opacity: 0;
+}
+
+.btn-scroll-top:hover{
+    color: #fff;
+}
+
+.btn-scroll-top-active{
+    opacity: 1;
+}
+
+
 .contenedor-logos div{
     width: 90%;
     height: 40px;
