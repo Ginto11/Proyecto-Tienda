@@ -28,11 +28,6 @@ document.addEventListener("scroll", (e) => {
 
 document.addEventListener("DOMContentLoaded", () =>{
 
-    document.documentElement.scrollTo({
-        behavior: "smooth",
-        top: 0
-    })
-
     if(localStorage.getItem("theme") === null) {localStorage.setItem("theme", "light");}
 
     if(localStorage.getItem("theme") === "light"){
