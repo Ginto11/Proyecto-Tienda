@@ -87,13 +87,16 @@ const modoLight = () =>{
 
 const categorias = {
     hombres: [
-        {nombre: "Pantalon", color: "Negro", costo: 34000}
+        {imagen: "./productos/hombres/pantalon-para-moto.jpg", descripcion: "Pantalon de color negro para motos e impermeable y de talla 32.", costo: 34000},
+        {imagen: "./productos/hombres/tenis-blancos.png", descripcion: "Tenis de color blanco, y de la mejor calidad posible, de talla 39.", costo: 60000},
+        {imagen: "./productos/hombres/camisa-azul.jpg", descripcion: "Camisa azul de tela y de color azul, talla S.", costo: 15000},
+        {imagen: "./productos/hombres/gafas.png", descripcion: "Gafas transition de color negro y con filtro de luz azul.", costo: 150000}
     ],
     mujeres: [
-        {nombre: "Blusa", color: "Azul", costo: 45000} 
+        {nombre: "Blusa", imagen: "./productos/mujeres/blusa-blanca.png", color: "Blanca", costo: 45000} 
     ],
     niños: [
-        {nombre: "Gorro", color: "Rojo", costo: 14000}
+        {nombre: "Gorro", imagen: "./productos/niños/gorro-azul.png", color: "Azul", costo: 14000}
     ]
 };
 
@@ -119,11 +122,16 @@ function mostrarDatos(data){
     let lista = "";
     data.forEach(element => {
         lista += 
-        `<ul>
-            <li> ${element.nombre} </li>
-            <li> ${element.color} </li>
-            <li> ${element.costo} </li>
-         </ul>
+        `
+            <div class="contenedor-producto">
+                <div class="contenedor-producto--imagen">
+                    <img src="${element.imagen}" />
+                </div>
+
+                <p> <b> Descripcion: </b> ${element.descripcion} </p>
+                <h3> <b> COP: </b> ${element.costo} Pesos</h3>
+                <button> Agregar </button>
+            </div>
         `
     });
 
