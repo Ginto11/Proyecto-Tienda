@@ -427,6 +427,44 @@ ul{
     background-color: #8E44ADaa;
 }
 
+@media screen and (max-width: 2560px) {
+
+    header h1{
+        font-size: 25px;
+    }
+
+    section .contenedor-contenido{
+        width: 70%;
+    }
+
+    .navegacion-active{
+        width: 40%;
+    }
+
+    .contenedor-producto{
+        width: 15%;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+
+    header h1{
+        font-size: 25px;
+    }
+
+    section .contenedor-contenido{
+        width: 70%;
+    }
+
+    .navegacion-active{
+        width: 40%;
+    }
+
+    .contenedor-producto{
+        width: 20%;
+    }
+}
+
 @media screen and (max-width: 1030px) {
 
     header h1{
@@ -440,6 +478,10 @@ ul{
 
     .navegacion-active{
         width: 40%;
+    }
+
+    .contenedor-producto{
+        width: 30%;
     }
 }
 
@@ -456,6 +498,10 @@ ul{
 
     .navegacion-active{
         width: 100%;
+    }
+
+    .contenedor-producto{
+        width: 40%;
     }
 }
 
