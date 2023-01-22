@@ -599,6 +599,9 @@ ul{
         font-size: inherit;
     }
 
+    .contenedor-producto{
+        width: 90%;
+    }
     
     
 }
