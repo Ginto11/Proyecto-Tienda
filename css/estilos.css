@@ -68,8 +68,9 @@ body::-webkit-scrollbar-thumb{
     border-color: #000;
     font-weight: bold;
 
+    transform: translateX(100px);
+
     transition: 0.3s ease all;
-    opacity: 0;
 }
 
 .btn-scroll-top:hover{
@@ -77,7 +78,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .btn-scroll-top-active{
-    opacity: 1;
+    transform: translateX(0);
 }
 
 
@@ -590,6 +591,12 @@ ul{
     header div .moto-entrega span{
         width: 10px;
         height: 10px;
+    }
+
+    .btn-scroll-top{
+        width: 40px;
+        height: 40px;
+        font-size: inherit;
     }
 
     
