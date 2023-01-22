@@ -6,22 +6,22 @@ const luna = "🌙";
 
 const categorias = {
     hombres: [
-        {imagen: "./productos/hombres/pantalon-para-moto.jpg", descripcion: "Pantalon de color negro para motos e impermeable y de talla 32.", costo: 34000},
-        {imagen: "./productos/hombres/tenis-blancos.png", descripcion: "Tenis de color blanco, y de la mejor calidad posible, de talla 39.", costo: 60000},
-        {imagen: "./productos/hombres/camisa-azul.jpg", descripcion: "Camisa azul de tela y de color azul, talla S.", costo: 15000},
-        {imagen: "./productos/hombres/gafas.png", descripcion: "Gafas transition de color negro y con filtro de luz azul.", costo: 150000},
-        {imagen: "./productos/hombres/medias-azules.png", descripcion: "Medias de color azules, para adultos y tipo bota recta.", costo: 70000}
+        {nombre: "pantalon", imagen: "./productos/hombres/pantalon-para-moto.jpg", descripcion: "Pantalon de color negro para motos e impermeable y de talla 32.", costo: 34000},
+        {nombre: "tenis", imagen: "./productos/hombres/tenis-blancos.png", descripcion: "Tenis de color blanco, y de la mejor calidad posible, de talla 39.", costo: 60000},
+        {nombre: "camisa", imagen: "./productos/hombres/camisa-azul.jpg", descripcion: "Camisa azul de tela y de color azul, talla S.", costo: 15000},
+        {nombre: "gafas", imagen: "./productos/hombres/gafas.png", descripcion: "Gafas transition de color negro y con filtro de luz azul.", costo: 150000},
+        {nombre: "medias", imagen: "./productos/hombres/medias-azules.png", descripcion: "Medias de color azules, para adultos y tipo bota recta.", costo: 70000}
     ],
     mujeres: [
-        {imagen: "./productos/mujeres/blusa-blanca.png", descripcion: "Blusa de color blanco con corazones de color negrom y azul talla S.", costo: 45000},
-        {imagen: "./productos/mujeres/secador-rojo.png", descripcion: "Secador de cabello de color rojo, profesional que te dara la posibilidad de tener el mejor look", costo: 230000},
-        {imagen: "./productos/mujeres/plancha-negra.png", descripcion: "Plancha de color negro, para alisar todo tipo de cabello y con temperatura graduable.", costo: 140000},
-        {imagen: "./productos/mujeres/tacones-azules.png", descripcion: "Tacones azules con diseños de color amarillo, estan echos en cuero de buena calidad.", costo: 175000},
-        {imagen: "./productos/mujeres/brasier-negro.png", descripcion: "Brasier de color negro", costo: 20000}
+        {nombre: "blusa", imagen: "./productos/mujeres/blusa-blanca.png", descripcion: "Blusa de color blanco con corazones de color negrom y azul talla S.", costo: 45000},
+        {nombre: "secador", imagen: "./productos/mujeres/secador-rojo.png", descripcion: "Secador de cabello de color rojo, profesional que te dara la posibilidad de tener el mejor look", costo: 230000},
+        {nombre: "plancha", imagen: "./productos/mujeres/plancha-negra.png", descripcion: "Plancha de color negro, para alisar todo tipo de cabello y con temperatura graduable.", costo: 140000},
+        {nombre: "tacones", imagen: "./productos/mujeres/tacones-azules.png", descripcion: "Tacones azules con diseños de color amarillo, estan echos en cuero de buena calidad.", costo: 175000},
+        {nombre: "brasier", imagen: "./productos/mujeres/brasier-negro.png", descripcion: "Brasier de color negro", costo: 20000}
     ],
     niños: [
-        {imagen: "./productos/niños/gorro-azul.png", descripcion: "Gorro de color azul para niños pequeños.", costo: 14000},
-        {imagen: "./productos/niños/maleta-mickey.png", descripcion: "Maleta de color azul de mickey, para niños de 3 a 9 años.", costo: 70000}
+        {nombre: "gorro", imagen: "./productos/niños/gorro-azul.png", descripcion: "Gorro de color azul para niños pequeños.", costo: 14000},
+        {nombre: "maleta", imagen: "./productos/niños/maleta-mickey.png", descripcion: "Maleta de color azul de mickey, para niños de 3 a 9 años.", costo: 70000}
     ]
 };
 
@@ -106,24 +106,17 @@ document.addEventListener("click", (e) => {
 
     if(e.target.matches("#btn-buscar")){
 
+        const categoorias = {
+            hombres: "Hola"
+        }
+
         const producto = document.querySelector("#buscador-productos").value;
 
         const valueCategoria = document.querySelector("#filtro-categorias").value;
 
-        if(valueCategoria  == "hombres"){
-
-
-            for(let i = 0; i < hombres.length; i++){
-
-                const descripcion = hombres[i].descripcion;
-
-                if(!descripcion.indexOf(producto[0].toUpperCase(), 0)){
-                    
-                    mostrarProducto(hombres[i]);
-
-                }
-            }
-        }
+        if(valueCategoria  == "hombres"){buscandoProducto(hombres, producto);}
+        if(valueCategoria  == "mujeres"){buscandoProducto(mujeres, producto);}
+        if(valueCategoria  == "niños"){buscandoProducto(niños, producto);}
 
     }
 
@@ -166,6 +159,7 @@ function mostrarDatos(data){
 }
 
 function mostrarProducto(producto){
+    console.log(producto)
     let lista = "";
     lista = 
     `
@@ -181,6 +175,30 @@ function mostrarProducto(producto){
     `
 
     document.querySelector(".contenedor-productos-filtro").innerHTML = lista;
+}
+
+function buscandoProducto(lista, producto){
+
+    for(let i = 0; i < lista.length; i++){
+
+        const nombre = lista[i].nombre;
+
+        const productoPorBuscar = producto.toLowerCase();
+
+        console.log(productoPorBuscar, nombre)
+
+        if(productoPorBuscar == nombre){
+            
+            mostrarProducto(lista[i]);
+
+            return;
+
+        }
+        
+    }
+
+    document.querySelector(".contenedor-productos-filtro").innerHTML = `No se encontro el producto: ${producto}`;
+
 }
 
 

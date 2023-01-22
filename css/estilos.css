@@ -139,6 +139,8 @@ header button{
     border: none;
     cursor: pointer;
     z-index: 600;
+    width: 30px;
+    height: 30px;
 }
 
 header div {
@@ -146,27 +148,37 @@ header div {
     gap: 30px;
 }
 
-header div .btn-theme-dark{
-    background-color: #0004;
-    width: 32px;
-    height: 32px;
-    font-size:20px;
-    border-radius: 50%;
+header button img{
+    width: 100%;
 }
 
-header div .btn-theme-light{
-    background-color: #0004;
+header div .moto-entrega{
+    position: relative;
+}
+
+header div .moto-entrega img{
+    width: 100%;
+}
+
+header div .moto-entrega span{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background-color: #8a2be2;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    bottom: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: yellow;
-    font-size: 40px;
+    font-weight: bold;
 }
 
-
+header div .btn-theme-dark{
+    background-color: #0004;
+    font-size:20px;
+    border-radius: 50%;
+}
 
 .navegacion{
     position: fixed;
@@ -457,11 +469,11 @@ ul{
     }
 
     .navegacion-active{
-        width: 40%;
+        width: 30%;
     }
 
     .contenedor-producto{
-        width: 20%;
+        width: 25%;
     }
 }
 
@@ -565,6 +577,8 @@ ul{
     .navegacion-active{
         width: 100%;
     }
+
+    
 }
 
 
