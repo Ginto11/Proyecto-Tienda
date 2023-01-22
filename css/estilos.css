@@ -578,6 +578,21 @@ ul{
         width: 100%;
     }
 
+    header button{
+        width: 20px;
+        height: 20px;
+    }
+
+    header div .btn-theme-dark{
+        font-size: inherit;
+    }
+
+    header div .moto-entrega span{
+        width: 10px;
+        height: 10px;
+    }
+
+    
     
 }
 
