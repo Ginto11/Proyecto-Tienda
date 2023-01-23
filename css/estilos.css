@@ -190,7 +190,7 @@ header div .btn-theme-dark{
     transition: .5s ease all;
     box-shadow: 0 0 3px #222;
 
-    transform: translateX(-1000px);
+    transform: translateX(-10000px);
     z-index: 1000;
     gap: 5px;
 }
