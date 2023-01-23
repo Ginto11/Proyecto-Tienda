@@ -2,7 +2,28 @@ const btn = document.querySelector(".btn-menu");
 const navegacion = document.querySelector(".navegacion");
 const overlay = document.querySelector(".overlay");
 const selectores = document.querySelectorAll("[data-theme]");
+let contadorCompras = 0;
+let mostradorContador = document.querySelector(".contador-compras");
 const luna = "🌙";
+
+const hombresPOO = [];
+const mujeresPOO = [];
+const niñosPOO = [];
+
+const moto = [];
+
+
+class Producto{
+    static id = 1;
+    constructor(nombre, imagen, descripcion, costo){
+        this.nombre = nombre;
+        this.imagen = imagen;
+        this.descripcion = descripcion;
+        this.costo = costo;
+        this.id = Producto.id;
+        Producto.id++;
+    }
+}
 
 const categorias = {
     hombres: [
@@ -27,18 +48,42 @@ const categorias = {
 
 const {hombres, mujeres, niños} = categorias;
 
+hombres.forEach(element =>{
+    const producto = new Producto(element.nombre, element.imagen, element.descripcion, element.costo);
+    hombresPOO.push(producto);
+})
+
+console.log("Productos de hombres")
+console.log(hombresPOO)
+
+mujeres.forEach(element =>{
+    const producto = new Producto(element.nombre, element.imagen, element.descripcion, element.costo);
+    mujeresPOO.push(producto);
+})
+
+console.log("Productos de mujeres")
+console.log(mujeresPOO)
+
+niños.forEach(element =>{
+    const producto = new Producto(element.nombre, element.imagen, element.descripcion, element.costo);
+    niñosPOO.push(producto);
+})
+
+console.log("Productos de niños")
+console.log(niñosPOO);
+
 document.getElementById("filtro-categorias").addEventListener("change", (e)=>{
 
     if(e.target.value === "mujeres"){
-        mostrarDatos(mujeres);
+        mostrarDatos(mujeresPOO);
     }
 
     if(e.target.value == "hombres"){
-        mostrarDatos(hombres);
+        mostrarDatos(hombresPOO);
     }
 
     if(e.target.value == "niños"){
-        mostrarDatos(niños);
+        mostrarDatos(niñosPOO);
     }
 });
 
@@ -80,6 +125,9 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 document.addEventListener("click", (e) => {
 
+    console.log(e.target)
+
+
     if(e.target.localName == "a"){
         navegacion.classList.toggle("navegacion-active");
         overlay.classList.toggle("overlay-active");
@@ -106,18 +154,82 @@ document.addEventListener("click", (e) => {
 
     if(e.target.matches("#btn-buscar")){
 
-        const categoorias = {
-            hombres: "Hola"
-        }
-
         const producto = document.querySelector("#buscador-productos").value;
 
         const valueCategoria = document.querySelector("#filtro-categorias").value;
 
-        if(valueCategoria  == "hombres"){buscandoProducto(hombres, producto);}
-        if(valueCategoria  == "mujeres"){buscandoProducto(mujeres, producto);}
-        if(valueCategoria  == "niños"){buscandoProducto(niños, producto);}
+        if(valueCategoria  == "hombres"){buscandoProducto(hombresPOO, producto);}
+        if(valueCategoria  == "mujeres"){buscandoProducto(mujeresPOO, producto);}
+        if(valueCategoria  == "niños"){buscandoProducto(niñosPOO, producto);}
 
+    }
+
+    if(e.target.matches(".btn-agregar-carrito")){
+        contadorCompras++;
+        mostradorContador.textContent = contadorCompras;
+
+        const valueCategoria = document.querySelector("#filtro-categorias").value;
+        const id = e.target.dataset.id;
+
+        if(valueCategoria == "hombres"){
+            hombresPOO.forEach(element =>{
+                if(element.id == id){
+                    moto.push(element);
+                }
+            })
+        }
+
+        if(valueCategoria == "mujeres"){
+            mujeresPOO.forEach(element =>{
+                if(element.id == id){
+                    moto.push(element);
+                }
+            })
+        }
+
+        if(valueCategoria == "niños"){
+            niñosPOO.forEach(element =>{
+                if(element.id == id){
+                    moto.push(element);
+                }
+            })
+        }
+
+        console.log(moto)
+    }
+
+    if(e.target.matches(".moto-entrega-img") || e.target.matches(".contador-compras")){
+        if(contadorCompras == 0){
+            alert("No has agregado nada al carrito");
+            return;
+        }
+
+        let productos = ""
+        moto.forEach(element => {
+            productos += 
+            `
+                <div class="moto-producto-contenedor">
+                    <div class="moto-productos-contenedor-imagen">
+                        <img src="${element.imagen}" alt="">
+                    </div>
+                    <div>
+                        <h3>COP: ${element.costo} Pesos</h3>
+                    </div>
+                </div>
+            `
+        })
+
+        document.querySelector(".moto").classList.toggle("moto-active")
+        overlay.classList.toggle("overlay-active")
+        document.querySelector("body").classList.toggle("desactivar-scroll-body");
+        document.querySelector(".moto-productos").innerHTML = productos;
+    }
+
+    if(e.target.matches(".btn-cerrar-moto-compras")){
+        document.querySelector(".moto").classList.toggle("moto-active")
+        document.querySelector("body").classList.toggle("desactivar-scroll-body");
+        overlay.classList.toggle("overlay-active")
+        
     }
 
 });
@@ -138,6 +250,10 @@ const modoLight = () =>{
     localStorage.setItem("theme", "light");
 }
 
+function agregarProducto(producto){
+    console.log(producto)
+}
+
 function mostrarDatos(data){
     let lista = "";
     data.forEach(element => {
@@ -150,7 +266,7 @@ function mostrarDatos(data){
 
                 <p> <b> Descripcion: </b> ${element.descripcion} </p>
                 <h3> <b> COP: </b> ${element.costo} Pesos</h3>
-                <button> Agregar </button>
+                <button class="btn-agregar-carrito" data-id=${element.id}> Agregar </button>
             </div>
         `
     });

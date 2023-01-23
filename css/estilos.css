@@ -132,7 +132,6 @@ header{
     justify-content: space-around;
     align-items: center;
     box-shadow: 0 0 3px #222;
-    z-index: 100;
 }
 
 header button{
@@ -180,6 +179,122 @@ header div .btn-theme-dark{
     font-size:20px;
     border-radius: 50%;
 }
+
+.moto{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 50%;
+    height: 100vh;
+    position: fixed;
+    transition: .5s ease all;
+    box-shadow: 0 0 3px #222;
+
+    transform: translateX(-1000px);
+    z-index: 1000;
+    gap: 5px;
+}
+
+
+.moto .moto-encabezado{
+    width: 100%;
+    background-color: #1F618D;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 0 3px #000;
+}
+
+.moto .moto-encabezado button{
+    outline: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.moto .moto-productos{
+    overflow-y: scroll;
+    background-color: #fff;
+    width: 100%;
+    height: calc(100vh - 110px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+.moto .moto-productos::-webkit-scrollbar{
+    width: 7px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.moto .moto-productos::-webkit-scrollbar-thumb{
+    width: 7px;
+    background-color: #0006;
+    border-radius: 3px;
+}
+
+.moto-producto-contenedor{
+    width: 90%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.moto-productos-contenedor-imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+}
+
+.moto-productos-contenedor-imagen img{
+    width: 100%;
+    height: 200px;
+    background-color: #0001;
+    border-radius: 3px;
+}
+
+.moto .moto-comprar{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background-color: #1F618D;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 3px #000;
+}
+
+.moto .moto-comprar button{
+    background-color: #2ECC71;
+    height: 30px;
+    width: 100px;
+    border:  transparent;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.moto .moto-comprar button:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.moto-active{
+    transform: translateX(0);
+}
+
+.desactivar-scroll-body{
+    overflow-y: hidden;
+}
+
+
 
 .navegacion{
     position: fixed;
@@ -440,6 +555,30 @@ ul{
     background-color: #8E44ADaa;
 }
 
+.modo-dark .moto-entrega span{
+    background-color: #1F618D;
+}
+
+.modo-dark .moto-productos{
+    background-color: #222;
+}
+
+.modo-dark .moto{
+    background-color: #222;
+}
+
+.modo-dark .moto .moto-productos-contenedor-imagen img{
+    background-color: #fff1;
+}
+
+.modo-dark .moto .moto-encabezado{
+    background-color: #8E44AD;
+}
+
+.modo-dark .moto-comprar{
+    background-color: #8E44AD;
+}
+
 @media screen and (max-width: 2560px) {
 
     header h1{
@@ -601,6 +740,10 @@ ul{
 
     .contenedor-producto{
         width: 90%;
+    }
+
+    .moto{
+        width: 100%;
     }
     
     
