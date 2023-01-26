@@ -120,6 +120,10 @@ document.addEventListener("DOMContentLoaded", () =>{
     if(localStorage.getItem("theme") === "dark"){
         modoDark();
     }
+
+    document.getElementById("filtro-categorias").value = "hombres";
+    mostrarDatos(hombresPOO);
+
 });
 
 

@@ -20,7 +20,9 @@ html{
 body{
     overflow-x: hidden;
     position: relative;
+    text-align: justify;
 }
+
 
 body::-webkit-scrollbar{
     width: 6px;
@@ -399,6 +401,73 @@ section .contenedor-contenido .contenedor-imagen img {
     border-radius: 4px;
 }
 
+section .contenedor-cotacto{
+    display: flex;
+    gap: 30px;
+}
+
+section .contenedor-contenido .contenedor-datos-formulario{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+section .contenedor-datos-formulario .formulario{
+    width: 320px;
+    padding: 20px;
+    background-color: #0002;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 4px;
+}
+
+section .contenedor-datos-formulario .formulario textarea{
+    resize: none;
+    outline: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+section .contenedor-datos-formulario .formulario textarea::-webkit-scrollbar{
+    width: 5px;
+}
+
+section .contenedor-datos-formulario .formulario textarea::-webkit-scrollbar-thumb{
+    background-color: #222;
+    border-radius: 4px;
+}
+
+section .contenedor-datos-formulario .formulario input{
+    height: 30px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    background-color: #1F618D;
+}
+
+section .contenedor-datos-formulario .formulario input:hover{
+    font-weight: bold;
+}
+
+section .contenedor-cotacto article{
+    width: 50%;
+}
+
+section .contenedor-cotacto article .formulario{
+    width: 50%;
+}
+
+section .contenedor-cotacto .contenedor-contacto-imagen{
+    width: 40%;
+}
+
+section .contenedor-cotacto .contenedor-contacto-imagen img{
+    width: 100%;
+    border-radius: 4px;
+}
+
 ul{
     margin-left: 30px;
 }
@@ -579,6 +648,10 @@ ul{
     background-color: #8E44AD;
 }
 
+.modo-dark section .contenedor-datos-formulario .formulario input{
+    background-color: #8E44AD;
+}
+
 @media screen and (max-width: 2560px) {
 
     header h1{
@@ -590,13 +663,41 @@ ul{
     }
 
     .navegacion-active{
-        width: 40%;
+        width: 20%;
     }
 
     .contenedor-producto{
-        width: 15%;
+        width: 20%;
+    }
+
+    .moto{
+        width: 20%;
     }
 }
+
+@media screen and (max-width: 2000px) {
+
+    header h1{
+        font-size: 25px;
+    }
+
+    section .contenedor-contenido{
+        width: 70%;
+    }
+
+    .navegacion-active{
+        width: 20%;
+    }
+
+    .contenedor-producto{
+        width: 20%;
+    }
+
+    .moto{
+        width: 25%;
+    }
+}
+
 
 @media screen and (max-width: 1440px) {
 
@@ -614,6 +715,10 @@ ul{
 
     .contenedor-producto{
         width: 25%;
+    }
+
+    .moto{
+        width: 40%;
     }
 }
 
@@ -634,6 +739,10 @@ ul{
 
     .contenedor-producto{
         width: 30%;
+    }
+
+    .moto{
+        width: 40%;
     }
 }
 
@@ -764,6 +873,16 @@ ul{
 
     .moto{
         width: 100%;
+    }
+
+    section .contenedor-contenido .contenedor-cotacto{
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    section .contenedor-contenido .contenedor-datos-formulario{
+        display: flex;
+        flex-direction: column !important;
     }
     
     
