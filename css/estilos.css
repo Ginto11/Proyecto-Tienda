@@ -413,7 +413,7 @@ section .contenedor-contenido .contenedor-datos-formulario{
 }
 
 section .contenedor-datos-formulario .formulario{
-    width: 320px;
+    width: 40%;
     padding: 20px;
     background-color: #0002;
     display: flex;
@@ -884,7 +884,23 @@ ul{
         display: flex;
         flex-direction: column !important;
     }
+
+    section .contenedor-datos-formulario .formulario {
+        width: 80%;
+        padding: 20px;
+    }
+
+    section .contenedor-cotacto article{
+        width: 90%;
+    }
+
+    section .contenedor-cotacto article p{
+        width: 100%;
+    }
     
+    section .contenedor-cotacto .contenedor-contacto-imagen{
+        width: 90%;
+    }
     
 }
 
