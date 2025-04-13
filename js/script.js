@@ -53,24 +53,17 @@ hombres.forEach(element =>{
     hombresPOO.push(producto);
 })
 
-console.log("Productos de hombres")
-console.log(hombresPOO)
-
 mujeres.forEach(element =>{
     const producto = new Producto(element.nombre, element.imagen, element.descripcion, element.costo);
     mujeresPOO.push(producto);
 })
 
-console.log("Productos de mujeres")
-console.log(mujeresPOO)
 
 niños.forEach(element =>{
     const producto = new Producto(element.nombre, element.imagen, element.descripcion, element.costo);
     niñosPOO.push(producto);
 })
 
-console.log("Productos de niños")
-console.log(niñosPOO);
 
 document.getElementById("filtro-categorias").addEventListener("change", (e)=>{
 
@@ -128,8 +121,6 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 
 document.addEventListener("click", (e) => {
-
-    console.log(e.target)
 
 
     if(e.target.localName == "a"){
@@ -308,17 +299,13 @@ function buscandoProducto(lista, producto){
         console.log(productoPorBuscar, nombre)
 
         if(productoPorBuscar == nombre){
-            
             mostrarProducto(lista[i]);
 
             return;
-
         }
-        
     }
 
     document.querySelector(".contenedor-productos-filtro").innerHTML = `No se encontro el producto: ${producto}`;
-
 }
 
 
